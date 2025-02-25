@@ -5,7 +5,6 @@ let inputAmigo = document.getElementById("amigo");
 let listaAmigos = document.getElementById("listaAmigos");
 let resultado = document.getElementById("resultado");
 
-
 function agregarAmigo() {
     let nombre = inputAmigo.value.trim();
     
@@ -25,4 +24,16 @@ function agregarAmigo() {
         li.textContent = amigo;
         listaAmigos.appendChild(li);
     }
+}
+
+function sortearAmigo() {  
+    if (amigos.length === 0) {
+        alert("No hay amigos para sortear.");
+        return;
+    }
+   
+    let indiceDelSorteo = Math.floor(Math.random() * amigos.length);
+    let amigoSeleccionado = amigos[indiceDelSorteo];
+   
+    resultado.innerHTML = "¡El amigo secreto es: " + amigoSeleccionado + "!";
 }
